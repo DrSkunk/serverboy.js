@@ -189,6 +189,16 @@ Interface.prototype = {
     getAudio : function() {
         let _that = this[PRIVATE];
         return _that.gameboy.audioBuffer;
+    },
+
+    saveState : function(){
+        let _that = this[PRIVATE];
+        return _that.gameboy.saveState();
+    },
+
+    returnFromState : function(returnedFrom){
+        let _that = this[PRIVATE];
+        _that.gameboy.saving(returnedFrom);
     }
 };
 
